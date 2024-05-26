@@ -1,0 +1,16 @@
+# OS generated files #
+.DS_Store
+
+# Media #
+*.mov
+*.mp3
+*.mp4
+*.ogg
+*.ogv
+*.webm
+
+# Custom #
+.env
+_site
+ignore
+node_modules
