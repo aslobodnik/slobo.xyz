@@ -1,0 +1,273 @@
+---
+layout: default
+title: Reth Archival Node Lighthouse Build Guide
+---
+
+<div class="flex flex-col items-center space-x-4">
+  <div class="mb-8">
+    <h1 class="text-2xl">Reth Node Archival Guide</h1>
+    <div class="text-xs text-green-700 text-center">June 2024</div>
+  </div>
+
+  <img src="/img/reth-beta.png" alt="Alex Slobodnik" class="rounded-lg" />
+</div>
+<div class="flex mt-10 flex-col gap-6 pb-10">
+  <h2 class="text-2xl">Intro</h2>
+  <p>
+    This is not the <span class="italic">best</span> way to create and run an
+    archival node, but it works.
+  </p>
+  <h2 class="text-2xl">Hardware</h2>
+  <div class="p-2">
+    <div class="grid grid-cols-2 grid-rows-4 gap-2">
+      <div
+        class="flex font-bold items-center justify-center border border-dotted border-gray-200"
+      >
+        Item
+      </div>
+      <div
+        class="flex items-center font-bold justify-center border border-dotted border-gray-200"
+      >
+        Price
+      </div>
+      <div
+        class="flex pl-4 items-center justify-start border border-dotted border-gray-200 h-10 text-sm"
+      >
+        <a
+          class="text-green-600 visited:text-green-800 hover:underline"
+          href="https://www.newegg.com/intel-rnuc13anhi5000u-nuc-13-pro/p/N82E16856102385?Item=N82E16856102385"
+          target="_blank"
+        >
+          Intel NUC 13 Pro i5</a
+        >
+      </div>
+      <div
+        class="flex items-center justify-center border border-dotted border-gray-200"
+      >
+        $461
+      </div>
+
+      <div
+        class="flex pl-4 items-center justify-start border border-dotted border-gray-200 h-10 text-sm"
+      >
+        <a
+          class="text-green-600 visited:text-green-800 hover:underline"
+          href="https://www.newegg.com/g-skill-32gb-260-pin-ddr4-so-dimm/p/N82E16820374024?Item=N82E16820374024"
+          target="_blank"
+        >
+          G.SKILL Ripjaws Series 32GB</a
+        >
+      </div>
+      <div
+        class="flex items-center justify-center border border-dotted border-gray-200"
+      >
+        $67
+      </div>
+
+      <div
+        class="flex pl-4 items-center justify-start border border-dotted border-gray-200 h-10 text-sm"
+      >
+        <a
+          class="text-green-600 visited:text-green-800 hover:underline"
+          target="_blank"
+          href="https://www.newegg.com/samsung-4tb-990-pro/p/N82E16820147879?Item=N82E16820147879"
+        >
+          NVMe SAMSUNG 990 PRO M.2 4TB</a
+        >
+      </div>
+      <div
+        class="flex items-center justify-center border border-dotted border-gray-200"
+      >
+        $330
+      </div>
+      <div
+        class="flex font-bold pl-4 items-center justify-start border border-dotted border-gray-200 h-10"
+      >
+        Total
+      </div>
+      <div
+        class="flex font-bold items-center justify-center border border-dotted border-gray-200"
+      >
+        $858
+      </div>
+    </div>
+    <p class="mt-4">
+      You'll need a Philips head screwdriver to open the NUC and a small
+      screwdriver to secure the NVMe storage. It took about 15 minutes to to
+      assemble.
+      <img
+        src="/img/nuc-inside.jpeg"
+        alt="Alex Slobodnik"
+        class="rounded-lg h-96 my-4 mx-auto"
+      />
+    </p>
+  </div>
+
+  <h2 class="text-2xl">Installation</h2>
+
+  <h3 class="underline underline-offset-4 italic text-gray-800">
+    Create Ubuntu ISO & Install
+  </h3>
+  <ol class="list-decimal pl-12 mb-4">
+    <li class="mb-2">
+      Download &amp; Install
+      <a
+        href="https://etcher.balena.io/"
+        class="text-green-600 visited:text-green-800 hover:underline"
+        target="_blank"
+        >Etcher</a
+      >
+    </li>
+    <li class="mb-2">
+      Download iso image from
+      <a
+        href="https://ubuntu.com/download/desktop"
+        class="text-green-600 visited:text-green-800 hover:underline"
+        target="_blank"
+        >Ubuntu Desktop</a
+      >
+    </li>
+    <li class="mb-2">
+      Create bootable USB by following the Ubuntu
+      <a
+        href="https://ubuntu.com/tutorials/create-a-usb-stick-on-macos#1-overview"
+        class="text-green-600 visited:text-green-800 hover:underline"
+        target="_blank"
+        >tutorial</a
+      >
+    </li>
+    <li class="mb-2">Install Ubuntu</li>
+  </ol>
+  <h3 class="underline underline-offset-4 italic text-gray-800">
+    Setting Up Ubuntu
+  </h3>
+
+  <div class="bg-gray-900 rounded-lg p-8">
+    <code class="text-gray-200 text-sm flex flex-col">
+      <div>
+        sudo apt update
+        <span class="text-green-600">// updates package list</span>
+      </div>
+
+      <div>
+        sudo apt install curl
+        <span class="text-green-600">// req for homebrew</span>
+      </div>
+      <div>
+        sudo apt install git-all
+        <span class="text-green-600">// req for homebrew</span>
+      </div>
+      <div>
+        sudo apt install openssh-server
+        <span class="text-green-600">// req for reth/lighthouse</span>
+      </div>
+    </code>
+  </div>
+  <div class="text-sm">
+    Install
+    <a
+      href="https://brew.sh/"
+      class="text-green-600 visited:text-green-800 hover:underline"
+      target="_blank"
+      >homebrew</a
+    >
+  </div>
+  <h3 class="underline underline-offset-4 italic text-gray-800">
+    Installing Reth
+  </h3>
+
+  <div class="bg-gray-900 rounded-lg p-8">
+    <code class="text-gray-200 text-sm flex flex-col">
+      <span>brew install paradigmxyz/brew/reth</span>
+      <div>
+        brew install lighthouse
+        <span class="text-green-600">// consensus client required</span>
+      </div>
+    </code>
+  </div>
+  <h3 class="underline underline-offset-4 italic text-gray-800">
+    Running Reth First Time (syncing)
+  </h3>
+  <div>
+    The official instructions are can be found
+    <a
+      href="https://reth.rs/run/mainnet.html"
+      class="text-green-600 visited:text-green-800 hover:underline"
+      target="_blank"
+      >here</a
+    >.
+  </div>
+  <div class="bg-gray-900 rounded-lg p-8">
+    <code class="text-gray-200 text-sm flex flex-col">
+      <span>sudo mkdir -p /secrets </span><br />
+      <div>
+        <span class="text-green-600"
+          >// secrete used in communicating between lighthouse and reth</span
+        ><br />
+        openssl rand -hex 32 | tr -d "\n" | sudo tee /secrets/jwt.hex
+      </div>
+      <pre>
+        <span class="text-green-600">
+// Consensus client mus run</span
+        >
+lighthouse bn \
+--checkpoint-sync-url https://mainnet.checkpoint.sigp.io \
+--execution-endpoint http://localhost:8551 \
+--disable-deposit-contract-sync \
+--execution-jwt /secrets/jwt.hex \
+      </pre>
+      <pre>
+        <span class="text-green-600">
+// Note the auth secret sharing</span>
+reth node \
+--authrpc.jwtsecret /secrets/jwt.hex \
+--authrpc.addr 127.0.0.1 \
+--authrpc.port 8551
+      </pre>
+      <span class="text-green-600">// reth Version: 0.2.0-beta.6-dev</span>
+    </code>
+  </div>
+  Reth provides console log to let you know the progress of the syncing. There
+  are 12 stages, the longest stage is stage 4, it took ~4 days to sync.
+  <h3 class="underline underline-offset-4 italic text-gray-800">
+    Running Reth After Syncing
+  </h3>
+  <div>To use reth as an RPC endpoint you will need to run the following</div>
+
+  <div class="bg-gray-900 rounded-lg p-8">
+    <code class="text-gray-200 text-sm flex flex-col">
+      <pre>
+
+reth node \
+--authrpc.jwtsecret /secrets/jwt.hex \
+--authrpc.addr 127.0.0.1 \
+--authrpc.port 8551 \
+--http \
+--http.api all
+    </pre
+      >
+      <span class="text-green-600">// reth Version: 0.2.0-beta.6-dev</span>
+    </code>
+  </div>
+  <h3 class="underline underline-offset-4 italic text-gray-800">
+    Now query reth Example #1
+  </h3>
+  <div class="bg-gray-900 rounded-lg p-8">
+    <code class="text-gray-200 text-sm flex flex-col">
+      <pre>
+curl -H "Content-Type: application/json" -X POST --data \
+'{
+"jsonrpc":"2.0",
+"method":"eth_blockNumber",
+"params":[],
+"id":67
+}' \
+127.0.0.1:8545
+    </pre
+      >
+      <span class="text-green-600"
+        >// Return: {"jsonrpc":"2.0","result":"0x1317f49","id":67}</span
+      >
+    </code>
+  </div>
+</div>
