@@ -12,18 +12,21 @@
     <meta property="og:url" content="https://slobo.xyz/" />
     <meta property="og:description" content="{{ description }}" />
   </head>
-  <body class="font-mono flex flex-col min-h-screen">
-    <div class="container flex-grow p-4 max-w-2xl mx-auto">
+  <body class="flex flex-col min-h-screen font-mono">
+    <div class="container flex-grow max-w-2xl p-4 mx-auto">
       <header>
         <nav>
           <ul class="flex gap-8">
-            <li class="hover:text-green-600 text-xl transition duration-300">
+            <li class="text-xl transition duration-300 hover:text-green-600">
               <a href="/">Home</a>
             </li>
-            <li class="hover:text-green-600 text-xl transition duration-300">
+            <li class="text-xl transition duration-300 hover:text-green-600">
               <a href="/books">Books</a>
             </li>
-            <li class="hover:text-green-600 text-xl transition duration-300">
+            <li class="text-xl transition duration-300 hover:text-green-600">
+              <a href="/quotes">Quotes</a>
+            </li>
+            <li class="text-xl transition duration-300 hover:text-green-600">
               <a href="/reth-archival-node-lighthouse-build-guide">Reth</a>
             </li>
           </ul>
@@ -32,10 +35,10 @@
       <main class="mt-16">{{ content }}</main>
     </div>
 
-    <footer class="mt-auto py-4">
+    <footer class="py-4 mt-auto">
       <div class="container max-w-2xl mx-auto text-center">
         <div
-          class="text-green-500 opacity-0 text-sm hover:cursor-pointer transition-opacity duration-3000 hover:opacity-100"
+          class="text-sm text-green-500 transition-opacity opacity-0 hover:cursor-pointer duration-3000 hover:opacity-100"
         >
           hi :-)
         </div>
