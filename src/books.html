@@ -5,46 +5,27 @@ description: Books that have had a significant impact on me.
 image: /img/book.webp
 ---
 
-<div class="flex items-center space-x-4">
-  <img
-    src="/img/book.webp"
-    alt="Alex Slobodnik"
-    class="w-16 h-16 rounded-tl-2xl rounded-br-2xl"
-  />
+{% include "hero.html", title: "Book Recommendations", image: "/img/book.webp" %}
 
-  <div>
-    <h1 class="text-2xl">Book Recommendations</h1>
-  </div>
-</div>
-<div class="flex flex-col gap-6 pb-10 mt-10">
-  <!-- Poor Charlie's Almanack -->
+<div class="content-list">
+  {% for book in books %}
   <div>
     <a
-      href="https://a.co/d/1b7QZTL"
+      href="{{ book.url }}"
       target="_blank"
-      class="text-green-600 hover:underline"
+      class="content-link"
     >
-      Poor Charlie's Almanack
+      {{ book.title }}
     </a>
+    {% if book.hasQuote %}
+    <blockquote class="p-4 italic text-neutral-600 quote">
+      <p class="mb-2 text-sm">"{{ book.quote }}"</p>
+      <cite class="text-sm">— {{ book.quoteAuthor }}</cite>
+    </blockquote>
+    {% endif %}
     <p class="mt-2 text-sm">
-      A collection of speeches and talks by Charlie Munger, Warren Buffett's
-      business partner. A great primer on Munger's mental models and investing
-      philosophy.
-    </p>
-  </div>
-  <!-- Ben Franklin's Autobiography -->
-  <div>
-    <a
-      href="https://gutenberg.org/cache/epub/20203/pg20203-images.html"
-      target="_blank"
-      class="text-green-600 hover:underline"
-    >
-      Ben Franklin's Autobiography
-    </a>
-    <p class="mt-2 text-sm">
-      The autobiography is written in simple langauge. The book demonstrates
-      Ben's thinking style. The self-improvement plan had the most impact on me.
-      In short, he made a list of
+      {% if book.hasVirtues %}
+      {{ book.description }} In short, he made a list of
       <span
         class="relative cursor-pointer group decoration-dotted sm:underline underline-offset-2"
         >13 virtues<span
@@ -66,104 +47,10 @@ image: /img/book.webp
         ></span
       >
       and tracked them daily to improve his character.
+      {% else %}
+      {{ book.description | safe }}
+      {% endif %}
     </p>
   </div>
-  <!-- How to Win Friends and Influence People -->
-  <div>
-    <a
-      href="https://a.co/d/8DWF2e6"
-      target="_blank"
-      class="text-green-600 hover:underline"
-    >
-      How to Win Friends and Influence People
-    </a>
-    <p class="mt-2 text-sm">
-      I initially dismissed this book because it seemed to encourage inauthentic
-      behavior. Over time, I found it helpful to understand people better. It's
-      quite useful to read and re-read every couple of years.
-    </p>
-  </div>
-  <div>
-    <a
-      href="https://a.co/d/79X3PEl"
-      target="_blank"
-      class="text-green-600 hover:underline"
-    >
-      Never Split the Difference
-    </a>
-    <p class="mt-2 text-sm">
-      This is the best book on negotiation I've read. If I had to sum up the
-      book in one quip, negotiation is “The art of letting someone else have
-      your way."
-    </p>
-  </div>
-  <div>
-    <a
-      href="https://a.co/d/79X3PEl"
-      target="_blank"
-      class="text-green-600 hover:underline"
-    >
-      Red-Blooded Risk
-    </a>
-    <p class="mt-2 text-sm">
-      It's not the easiest read, but there were several concepts that I found
-      nowhere else. My favorite insight was in a
-      <a
-        class="text-green-600 hover:underline"
-        href="https://en.wikipedia.org/wiki/Truel"
-        target="_blank"
-        >truel</a
-      >
-      (3 person duel), the person who is the best shot has the lowest chance of
-      survival.
-    </p>
-  </div>
-  <div>
-    <a
-      href="https://a.co/d/3Wb47lJ"
-      target="_blank"
-      class="text-green-600 hover:underline"
-    >
-      Fortune's Formula
-    </a>
-    <p class="mt-2 text-sm">
-      The book is about the Kelly Criterion, a formula for determining the
-      optimal size of a series of bets. This book exposed me to
-      <a
-        class="text-green-600 hover:underline"
-        href="https://en.wikipedia.org/wiki/Claude_Shannon"
-        target="_blank"
-        >Claude Shannon</a
-      >, who is the father of information theory. A key insight is that you can
-      go broke even when your expected value is positive.
-    </p>
-  </div>
-  <div>
-    <a
-      href="https://a.co/d/htIPFpC"
-      target="_blank"
-      class="text-green-600 hover:underline"
-    >
-      The Lessons of History
-    </a>
-    <p class="mt-2 text-sm">The book starts off with:</p>
-
-    <blockquote class="p-4 italic text-neutral-600 quote">
-      <p class="mb-2 text-sm">
-        "Only a fool would try to compress a hundred centuries into a hundred
-        pages of hazardous conclusions. We proceed."
-      </p>
-      <cite class="text-sm">— Will Durrant</cite>
-    </blockquote>
-    <p class="mt-2 text-sm">
-      History begins once we record it. Everything before that is prehistory.
-      <a
-        target="_blank"
-        class="text-green-600 hover:underline"
-        href="https://en.wikipedia.org/wiki/Will_Durant"
-        >Will Durant</a
-      >
-      traces civilization from ancient Egypt through to the 20th century.
-    </p>
-  </div>
+  {% endfor %}
 </div>

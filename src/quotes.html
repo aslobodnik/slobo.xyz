@@ -5,63 +5,15 @@ description: Quotes I frequently reference.
 image: /img/book.webp
 ---
 
-<div class="flex items-center space-x-4">
-  <img
-    src="/img/quote.webp"
-    alt="Alex Slobodnik"
-    class="w-16 h-16 rounded-tl-2xl rounded-br-2xl"
-  />
+{% include "hero.html", title: "Quotes", image: "/img/quote.webp" %}
 
+<div class="content-list">
   <div>
-    <h1 class="text-2xl">Quotes</h1>
-  </div>
-</div>
-<div class="flex flex-col gap-6 pb-10 mt-10">
-  <div>
+    {% for quote in quotes %}
     <blockquote class="p-4 italic text-neutral-600 quote">
-      <p class="mb-2 text-sm">You can't make a good deal with a bad person.</p>
-      <cite class="text-sm">— Warren Buffett</cite>
+      <p class="mb-2 text-sm">{{ quote.text }}</p>
+      <cite class="text-sm">— {{ quote.author }}</cite>
     </blockquote>
-    <blockquote class="p-4 italic text-neutral-600 quote">
-      <p class="mb-2 text-sm">Slow is smooth and smooth is fast.</p>
-      <cite class="text-sm">— Unknown</cite>
-    </blockquote>
-    <blockquote class="p-4 italic text-neutral-600 quote">
-      <p class="mb-2 text-sm">Well done is better than well said.</p>
-      <cite class="text-sm">— Ben Franklin</cite>
-    </blockquote>
-    <blockquote class="p-4 italic text-neutral-600 quote">
-      <p class="mb-2 text-sm">
-        The law, in its majestic equality, forbids rich and poor alike to sleep
-        under bridges, to beg in the streets, and to steal their bread.
-      </p>
-      <cite class="text-sm">— Anatole France</cite>
-    </blockquote>
-    <blockquote class="p-4 italic text-neutral-600 quote">
-      <p class="mb-2 text-sm">
-        Of all tyrannies, a tyranny sincerely exercised for the good of its
-        victims may be the most oppressive. It would be better to live under
-        robber barons than under omnipotent moral busybodies. The robber baron's
-        cruelty may sometimes sleep, his cupidity may at some point be satiated;
-        but those who torment us for our own good will torment us without end
-        for they do so with the approval of their own conscience.
-      </p>
-      <cite class="text-sm">— C. S. Lewis</cite>
-    </blockquote>
-    <blockquote class="p-4 italic text-neutral-600 quote">
-      <p class="mb-2 text-sm">
-        No man for any considerable period can wear one face to himself, and
-        another to the multitude, without finally getting bewildered as to which
-        may be the true.
-      </p>
-      <cite class="text-sm">— Nathaniel Hawthorne</cite>
-    </blockquote>
-    <blockquote class="p-4 italic text-neutral-600 quote">
-      <p class="mb-2 text-sm">
-        History reports that the men who can manage men manage the men who can
-        manage only things, and the men who can manage money manage all.
-      </p>
-      <cite class="text-sm">— Will Durrant</cite>
-    </blockquote>
+    {% endfor %}
   </div>
 </div>

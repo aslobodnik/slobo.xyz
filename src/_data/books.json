@@ -1,0 +1,41 @@
+[
+  {
+    "title": "Poor Charlie's Almanack",
+    "url": "https://a.co/d/1b7QZTL",
+    "description": "A collection of speeches and talks by Charlie Munger, Warren Buffett's business partner. A great primer on Munger's mental models and investing philosophy."
+  },
+  {
+    "title": "Ben Franklin's Autobiography",
+    "url": "https://gutenberg.org/cache/epub/20203/pg20203-images.html",
+    "description": "The autobiography is written in simple langauge. The book demonstrates Ben's thinking style. The self-improvement plan had the most impact on me.",
+    "hasVirtues": true
+  },
+  {
+    "title": "How to Win Friends and Influence People",
+    "url": "https://a.co/d/8DWF2e6",
+    "description": "I initially dismissed this book because it seemed to encourage inauthentic behavior. Over time, I found it helpful to understand people better. It's quite useful to read and re-read every couple of years."
+  },
+  {
+    "title": "Never Split the Difference",
+    "url": "https://a.co/d/79X3PEl",
+    "description": "This is the best book on negotiation I've read. If I had to sum up the book in one quip, negotiation is \"The art of letting someone else have your way.\""
+  },
+  {
+    "title": "Red-Blooded Risk",
+    "url": "https://a.co/d/79X3PEl",
+    "description": "It's not the easiest read, but there were several concepts that I found nowhere else. My favorite insight was in a <a class=\"content-link\" href=\"https://en.wikipedia.org/wiki/Truel\" target=\"_blank\">truel</a> (3 person duel), the person who is the best shot has the lowest chance of survival."
+  },
+  {
+    "title": "Fortune's Formula",
+    "url": "https://a.co/d/3Wb47lJ",
+    "description": "The book is about the Kelly Criterion, a formula for determining the optimal size of a series of bets. This book exposed me to <a class=\"content-link\" href=\"https://en.wikipedia.org/wiki/Claude_Shannon\" target=\"_blank\">Claude Shannon</a>, who is the father of information theory. A key insight is that you can go broke even when your expected value is positive."
+  },
+  {
+    "title": "The Lessons of History",
+    "url": "https://a.co/d/htIPFpC",
+    "description": "History begins once we record it. Everything before that is prehistory. <a target=\"_blank\" class=\"content-link\" href=\"https://en.wikipedia.org/wiki/Will_Durant\">Will Durant</a> traces civilization from ancient Egypt through to the 20th century.",
+    "hasQuote": true,
+    "quote": "Only a fool would try to compress a hundred centuries into a hundred pages of hazardous conclusions. We proceed.",
+    "quoteAuthor": "Will Durrant"
+  }
+]

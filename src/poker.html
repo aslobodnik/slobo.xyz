@@ -5,335 +5,119 @@ description: Poker Rules & Thoughts
 image: /img/book.webp
 ---
 
-<div class="flex items-center space-x-4">
-  <img
-    src="/img/poker/poker.webp"
-    alt="Alex Slobodnik"
-    class="w-16 h-20 rounded-tl-2xl rounded-br-2xl"
-  />
+{% include "hero.html", title: "Poker", image: "/img/poker/poker.webp" %}
 
-  <div>
-    <h1 class="text-2xl">Poker</h1>
-  </div>
-</div>
-<div class="flex flex-col gap-6 pb-10 mt-10">
+<div class="content-list">
   <div class="mb-8 text-2xl font-bold">Poker Hand Rankings</div>
 
   <div class="flex flex-col gap-6">
     <div>
-      <div class="mb-4 text-xl font-semibold text-green-700">Royal Flush</div>
-      <!-- Poker Hand Cards -->
-      <div class="flex items-center space-x-2 md:space-x-4">
-        <img
-          class="w-auto h-20 transition-transform duration-200 md:h-28 hover:scale-110"
-          src="/img/poker/AS.svg"
-          alt="Ace of Spades"
-        />
-        <img
-          class="w-auto h-20 transition-transform duration-200 md:h-28 hover:scale-110"
-          src="/img/poker/KS.svg"
-          alt="King of Spades"
-        />
-        <img
-          class="w-auto h-20 transition-transform duration-200 md:h-28 hover:scale-110"
-          src="/img/poker/QS.svg"
-          alt="Queen of Spades"
-        />
-        <img
-          class="w-auto h-20 transition-transform duration-200 md:h-28 hover:scale-110"
-          src="/img/poker/JS.svg"
-          alt="Jack of Spades"
-        />
-        <img
-          class="w-auto h-20 transition-transform duration-200 md:h-28 hover:scale-110"
-          src="/img/poker/TS.svg"
-          alt="Ten of Spades"
-        />
+      <div class="hand-title">Royal Flush</div>
+      <div class="card-container">
+        <img class="poker-card" src="/img/poker/AS.svg" alt="Ace of Spades" />
+        <img class="poker-card" src="/img/poker/KS.svg" alt="King of Spades" />
+        <img class="poker-card" src="/img/poker/QS.svg" alt="Queen of Spades" />
+        <img class="poker-card" src="/img/poker/JS.svg" alt="Jack of Spades" />
+        <img class="poker-card" src="/img/poker/TS.svg" alt="Ten of Spades" />
       </div>
     </div>
 
     <div>
-      <div class="mb-4 text-xl font-semibold text-green-700">
-        Straight Flush
-      </div>
-      <div class="flex items-center space-x-2 md:space-x-4">
-        <img
-          class="w-auto h-20 transition-transform duration-200 md:h-28 hover:scale-110"
-          src="/img/poker/9H.svg"
-          alt="Nine of Hearts"
-        />
-        <img
-          class="w-auto h-20 transition-transform duration-200 md:h-28 hover:scale-110"
-          src="/img/poker/8H.svg"
-          alt="Eight of Hearts"
-        />
-        <img
-          class="w-auto h-20 transition-transform duration-200 md:h-28 hover:scale-110"
-          src="/img/poker/7H.svg"
-          alt="Seven of Hearts"
-        />
-        <img
-          class="w-auto h-20 transition-transform duration-200 md:h-28 hover:scale-110"
-          src="/img/poker/6H.svg"
-          alt="Six of Hearts"
-        />
-        <img
-          class="w-auto h-20 transition-transform duration-200 md:h-28 hover:scale-110"
-          src="/img/poker/5H.svg"
-          alt="Five of Hearts"
-        />
+      <div class="hand-title">Straight Flush</div>
+      <div class="card-container">
+        <img class="poker-card" src="/img/poker/9H.svg" alt="Nine of Hearts" />
+        <img class="poker-card" src="/img/poker/8H.svg" alt="Eight of Hearts" />
+        <img class="poker-card" src="/img/poker/7H.svg" alt="Seven of Hearts" />
+        <img class="poker-card" src="/img/poker/6H.svg" alt="Six of Hearts" />
+        <img class="poker-card" src="/img/poker/5H.svg" alt="Five of Hearts" />
       </div>
     </div>
 
     <div>
-      <div class="mb-4 text-xl font-semibold text-green-700">
-        Four of a Kind
-      </div>
-      <div class="flex items-center space-x-2 md:space-x-4">
-        <img
-          class="w-auto h-20 transition-transform duration-200 md:h-28 hover:scale-110"
-          src="/img/poker/5H.svg"
-          alt="Five of Hearts"
-        />
-        <img
-          class="w-auto h-20 transition-transform duration-200 md:h-28 hover:scale-110"
-          src="/img/poker/5D.svg"
-          alt="Five of Diamonds"
-        />
-        <img
-          class="w-auto h-20 transition-transform duration-200 md:h-28 hover:scale-110"
-          src="/img/poker/5C.svg"
-          alt="Five of Clubs"
-        />
-        <img
-          class="w-auto h-20 transition-transform duration-200 md:h-28 hover:scale-110"
-          src="/img/poker/5S.svg"
-          alt="Five of Spades"
-        />
-        <img
-          class="w-auto h-20 transition-transform duration-200 md:h-28 hover:scale-110"
-          src="/img/poker/KH.svg"
-          alt="King of Hearts"
-        />
+      <div class="hand-title">Four of a Kind</div>
+      <div class="card-container">
+        <img class="poker-card" src="/img/poker/5H.svg" alt="Five of Hearts" />
+        <img class="poker-card" src="/img/poker/5D.svg" alt="Five of Diamonds" />
+        <img class="poker-card" src="/img/poker/5C.svg" alt="Five of Clubs" />
+        <img class="poker-card" src="/img/poker/5S.svg" alt="Five of Spades" />
+        <img class="poker-card" src="/img/poker/KH.svg" alt="King of Hearts" />
       </div>
     </div>
 
     <div>
-      <div class="mb-4 text-xl font-semibold text-green-700">Full House</div>
-      <div class="flex items-center space-x-2 md:space-x-4">
-        <img
-          class="w-auto h-20 transition-transform duration-200 md:h-28 hover:scale-110"
-          src="/img/poker/JH.svg"
-          alt="Jack of Hearts"
-        />
-        <img
-          class="w-auto h-20 transition-transform duration-200 md:h-28 hover:scale-110"
-          src="/img/poker/JD.svg"
-          alt="Jack of Diamonds"
-        />
-        <img
-          class="w-auto h-20 transition-transform duration-200 md:h-28 hover:scale-110"
-          src="/img/poker/JS.svg"
-          alt="Jack of Spades"
-        />
-        <img
-          class="w-auto h-20 transition-transform duration-200 md:h-28 hover:scale-110"
-          src="/img/poker/8H.svg"
-          alt="Eight of Hearts"
-        />
-        <img
-          class="w-auto h-20 transition-transform duration-200 md:h-28 hover:scale-110"
-          src="/img/poker/8D.svg"
-          alt="Eight of Diamonds"
-        />
+      <div class="hand-title">Full House</div>
+      <div class="card-container">
+        <img class="poker-card" src="/img/poker/JH.svg" alt="Jack of Hearts" />
+        <img class="poker-card" src="/img/poker/JD.svg" alt="Jack of Diamonds" />
+        <img class="poker-card" src="/img/poker/JS.svg" alt="Jack of Spades" />
+        <img class="poker-card" src="/img/poker/8H.svg" alt="Eight of Hearts" />
+        <img class="poker-card" src="/img/poker/8D.svg" alt="Eight of Diamonds" />
       </div>
     </div>
 
     <div>
-      <div class="mb-4 text-xl font-semibold text-green-700">Flush</div>
-      <div class="flex items-center space-x-2 md:space-x-4">
-        <img
-          class="w-auto h-20 transition-transform duration-200 md:h-28 hover:scale-110"
-          src="/img/poker/AH.svg"
-          alt="Ace of Hearts"
-        />
-        <img
-          class="w-auto h-20 transition-transform duration-200 md:h-28 hover:scale-110"
-          src="/img/poker/JH.svg"
-          alt="Jack of Hearts"
-        />
-        <img
-          class="w-auto h-20 transition-transform duration-200 md:h-28 hover:scale-110"
-          src="/img/poker/8H.svg"
-          alt="Eight of Hearts"
-        />
-        <img
-          class="w-auto h-20 transition-transform duration-200 md:h-28 hover:scale-110"
-          src="/img/poker/6H.svg"
-          alt="Six of Hearts"
-        />
-        <img
-          class="w-auto h-20 transition-transform duration-200 md:h-28 hover:scale-110"
-          src="/img/poker/2H.svg"
-          alt="Two of Hearts"
-        />
+      <div class="hand-title">Flush</div>
+      <div class="card-container">
+        <img class="poker-card" src="/img/poker/AH.svg" alt="Ace of Hearts" />
+        <img class="poker-card" src="/img/poker/JH.svg" alt="Jack of Hearts" />
+        <img class="poker-card" src="/img/poker/8H.svg" alt="Eight of Hearts" />
+        <img class="poker-card" src="/img/poker/6H.svg" alt="Six of Hearts" />
+        <img class="poker-card" src="/img/poker/2H.svg" alt="Two of Hearts" />
       </div>
     </div>
 
     <div>
-      <div class="mb-4 text-xl font-semibold text-green-700">Straight</div>
-      <div class="flex items-center space-x-2 md:space-x-4">
-        <img
-          class="w-auto h-20 transition-transform duration-200 md:h-28 hover:scale-110"
-          src="/img/poker/TH.svg"
-          alt="Ten of Hearts"
-        />
-        <img
-          class="w-auto h-20 transition-transform duration-200 md:h-28 hover:scale-110"
-          src="/img/poker/9S.svg"
-          alt="Nine of Spades"
-        />
-        <img
-          class="w-auto h-20 transition-transform duration-200 md:h-28 hover:scale-110"
-          src="/img/poker/8D.svg"
-          alt="Eight of Diamonds"
-        />
-        <img
-          class="w-auto h-20 transition-transform duration-200 md:h-28 hover:scale-110"
-          src="/img/poker/7C.svg"
-          alt="Seven of Clubs"
-        />
-        <img
-          class="w-auto h-20 transition-transform duration-200 md:h-28 hover:scale-110"
-          src="/img/poker/6H.svg"
-          alt="Six of Hearts"
-        />
+      <div class="hand-title">Straight</div>
+      <div class="card-container">
+        <img class="poker-card" src="/img/poker/TH.svg" alt="Ten of Hearts" />
+        <img class="poker-card" src="/img/poker/9S.svg" alt="Nine of Spades" />
+        <img class="poker-card" src="/img/poker/8D.svg" alt="Eight of Diamonds" />
+        <img class="poker-card" src="/img/poker/7C.svg" alt="Seven of Clubs" />
+        <img class="poker-card" src="/img/poker/6H.svg" alt="Six of Hearts" />
       </div>
     </div>
 
     <div>
-      <div class="mb-4 text-xl font-semibold text-green-700">
-        Three of a Kind
-      </div>
-      <div class="flex items-center space-x-2 md:space-x-4">
-        <img
-          class="w-auto h-20 transition-transform duration-200 md:h-28 hover:scale-110"
-          src="/img/poker/QH.svg"
-          alt="Queen of Hearts"
-        />
-        <img
-          class="w-auto h-20 transition-transform duration-200 md:h-28 hover:scale-110"
-          src="/img/poker/QD.svg"
-          alt="Queen of Diamonds"
-        />
-        <img
-          class="w-auto h-20 transition-transform duration-200 md:h-28 hover:scale-110"
-          src="/img/poker/QC.svg"
-          alt="Queen of Clubs"
-        />
-        <img
-          class="w-auto h-20 transition-transform duration-200 md:h-28 hover:scale-110"
-          src="/img/poker/9S.svg"
-          alt="Nine of Spades"
-        />
-        <img
-          class="w-auto h-20 transition-transform duration-200 md:h-28 hover:scale-110"
-          src="/img/poker/5H.svg"
-          alt="Five of Hearts"
-        />
+      <div class="hand-title">Three of a Kind</div>
+      <div class="card-container">
+        <img class="poker-card" src="/img/poker/QH.svg" alt="Queen of Hearts" />
+        <img class="poker-card" src="/img/poker/QD.svg" alt="Queen of Diamonds" />
+        <img class="poker-card" src="/img/poker/QC.svg" alt="Queen of Clubs" />
+        <img class="poker-card" src="/img/poker/9S.svg" alt="Nine of Spades" />
+        <img class="poker-card" src="/img/poker/5H.svg" alt="Five of Hearts" />
       </div>
     </div>
 
     <div>
-      <div class="mb-4 text-xl font-semibold text-green-700">Two Pair</div>
-      <div class="flex items-center space-x-2 md:space-x-4">
-        <img
-          class="w-auto h-20 transition-transform duration-200 md:h-28 hover:scale-110"
-          src="/img/poker/KH.svg"
-          alt="King of Hearts"
-        />
-        <img
-          class="w-auto h-20 transition-transform duration-200 md:h-28 hover:scale-110"
-          src="/img/poker/KD.svg"
-          alt="King of Diamonds"
-        />
-        <img
-          class="w-auto h-20 transition-transform duration-200 md:h-28 hover:scale-110"
-          src="/img/poker/7H.svg"
-          alt="Seven of Hearts"
-        />
-        <img
-          class="w-auto h-20 transition-transform duration-200 md:h-28 hover:scale-110"
-          src="/img/poker/7D.svg"
-          alt="Seven of Diamonds"
-        />
-        <img
-          class="w-auto h-20 transition-transform duration-200 md:h-28 hover:scale-110"
-          src="/img/poker/4S.svg"
-          alt="Four of Spades"
-        />
+      <div class="hand-title">Two Pair</div>
+      <div class="card-container">
+        <img class="poker-card" src="/img/poker/KH.svg" alt="King of Hearts" />
+        <img class="poker-card" src="/img/poker/KD.svg" alt="King of Diamonds" />
+        <img class="poker-card" src="/img/poker/7H.svg" alt="Seven of Hearts" />
+        <img class="poker-card" src="/img/poker/7D.svg" alt="Seven of Diamonds" />
+        <img class="poker-card" src="/img/poker/4S.svg" alt="Four of Spades" />
       </div>
     </div>
 
     <div>
-      <div class="mb-4 text-xl font-semibold text-green-700">One Pair</div>
-      <div class="flex items-center space-x-2 md:space-x-4">
-        <img
-          class="w-auto h-20 transition-transform duration-200 md:h-28 hover:scale-110"
-          src="/img/poker/AH.svg"
-          alt="Ace of Hearts"
-        />
-        <img
-          class="w-auto h-20 transition-transform duration-200 md:h-28 hover:scale-110"
-          src="/img/poker/AD.svg"
-          alt="Ace of Diamonds"
-        />
-        <img
-          class="w-auto h-20 transition-transform duration-200 md:h-28 hover:scale-110"
-          src="/img/poker/KS.svg"
-          alt="King of Spades"
-        />
-        <img
-          class="w-auto h-20 transition-transform duration-200 md:h-28 hover:scale-110"
-          src="/img/poker/8C.svg"
-          alt="Eight of Clubs"
-        />
-        <img
-          class="w-auto h-20 transition-transform duration-200 md:h-28 hover:scale-110"
-          src="/img/poker/3H.svg"
-          alt="Three of Hearts"
-        />
+      <div class="hand-title">One Pair</div>
+      <div class="card-container">
+        <img class="poker-card" src="/img/poker/AH.svg" alt="Ace of Hearts" />
+        <img class="poker-card" src="/img/poker/AD.svg" alt="Ace of Diamonds" />
+        <img class="poker-card" src="/img/poker/KS.svg" alt="King of Spades" />
+        <img class="poker-card" src="/img/poker/8C.svg" alt="Eight of Clubs" />
+        <img class="poker-card" src="/img/poker/3H.svg" alt="Three of Hearts" />
       </div>
     </div>
 
     <div>
-      <div class="mb-4 text-xl font-semibold text-green-700">High Card</div>
-      <div class="flex items-center space-x-2 md:space-x-4">
-        <img
-          class="w-auto h-20 transition-transform duration-200 md:h-28 hover:scale-110"
-          src="/img/poker/AH.svg"
-          alt="Ace of Hearts"
-        />
-        <img
-          class="w-auto h-20 transition-transform duration-200 md:h-28 hover:scale-110"
-          src="/img/poker/QS.svg"
-          alt="Queen of Spades"
-        />
-        <img
-          class="w-auto h-20 transition-transform duration-200 md:h-28 hover:scale-110"
-          src="/img/poker/9D.svg"
-          alt="Nine of Diamonds"
-        />
-        <img
-          class="w-auto h-20 transition-transform duration-200 md:h-28 hover:scale-110"
-          src="/img/poker/5C.svg"
-          alt="Five of Clubs"
-        />
-        <img
-          class="w-auto h-20 transition-transform duration-200 md:h-28 hover:scale-110"
-          src="/img/poker/2H.svg"
-          alt="Two of Hearts"
-        />
+      <div class="hand-title">High Card</div>
+      <div class="card-container">
+        <img class="poker-card" src="/img/poker/AH.svg" alt="Ace of Hearts" />
+        <img class="poker-card" src="/img/poker/QS.svg" alt="Queen of Spades" />
+        <img class="poker-card" src="/img/poker/9D.svg" alt="Nine of Diamonds" />
+        <img class="poker-card" src="/img/poker/5C.svg" alt="Five of Clubs" />
+        <img class="poker-card" src="/img/poker/2H.svg" alt="Two of Hearts" />
       </div>
     </div>
   </div>

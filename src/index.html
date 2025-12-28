@@ -9,7 +9,7 @@ image: /img/pfp.webp
   <img
     src="https://imagedelivery.net/UJ5oN2ajUBrk2SVxlns2Aw/33450a73-76fa-476a-879b-3b217ff46e00/public"
     alt="Alex Slobodnik"
-    class="w-16 h-16 rounded-tl-2xl rounded-br-2xl"
+    class="w-14 h-14 sm:w-16 sm:h-16 rounded-tl-2xl rounded-br-2xl"
   />
 
   <div>
@@ -40,117 +40,31 @@ image: /img/pfp.webp
   </div>
 </div>
 
-<h2 class="mt-4 mb-2 text-xl">About</h2>
-<div class="">
+<h2 class="section-title">About</h2>
+<div>
   Hi, I'm Slobo. I grew up in Chicago and moved to New York in 2023. I'm
   contributing to ENS through
   <a
-    class="text-green-600 hover:underline"
+    class="content-link"
     href="https://namestone.com/"
     target="_blank"
     >namestone.com</a
   >. I like coffee, hiking, and creating value.
 </div>
 
-<h2 class="mt-10 mb-4 text-xl">Projects</h2>
+<h2 class="section-title">Projects</h2>
 
-<!-- Projects -->
-<div class="flex flex-col gap-6">
-  <!-- NameStone -->
+<div class="flex flex-col gap-6 pb-10">
+  {% for project in projects %}
   <div>
     <a
-      href="https://namestone.com"
+      href="{{ project.url }}"
       target="_blank"
-      class="text-green-600 hover:underline"
+      class="content-link"
     >
-      NameStone
+      {{ project.title }}
     </a>
-    <p class="mt-1 text-sm">
-      Issue ENS subdomains through an easy to use REST API.
-    </p>
+    <p class="mt-2 text-sm">{{ project.description | safe }}</p>
   </div>
-  <!-- Durin -->
-  <div>
-    <a
-      href="https://durin.dev"
-      target="_blank"
-      class="text-green-600 hover:underline"
-    >
-      Durin
-    </a>
-    <p class="mt-1 text-sm">
-      Durin is an opinionated approach to issuing ENS subnames on L2. Project
-      docs, contracts, and architecture can be found on
-      <a href="https://github.com/resolverworks/durin">GitHub</a>.
-    </p>
-  </div>
-  <!-- ENSPro -->
-  <div>
-    <a
-      href="https://enspro.xyz"
-      target="_blank"
-      class="text-green-600 hover:underline"
-    >
-      ENSPro
-    </a>
-    <p class="mt-1 text-sm">
-      A free and easy-to-use no-code portal for managing ENS subdomains.
-    </p>
-  </div>
-  <!-- ENS Wallets -->
-  <div>
-    <a
-      href="https://enswallets.xyz"
-      target="_blank"
-      class="text-green-600 hover:underline"
-    >
-      ENS Wallets
-    </a>
-    <p class="mt-1 text-sm">
-      Current Balances of ENS DAO Wallets and their safe signers.
-    </p>
-  </div>
-  <!-- SafeNotes -->
-  <div>
-    <a
-      href="https://safenotes.xyz/"
-      target="_blank"
-      class="text-green-600 hover:underline"
-    >
-      SafeNotes
-    </a>
-    <p class="mt-1 text-sm">
-      Add notes to Safe transactions to clarify purpose, context, and
-      origin—improving transparency and coordination.
-    </p>
-  </div>
-
-  <!-- Voting Power -->
-  <div>
-    <a
-      href="https://votingpower.xyz"
-      target="_blank"
-      class="text-green-600 hover:underline"
-    >
-      Voting Power
-    </a>
-    <p class="mt-1 text-sm">
-      Voting Power makes it easy to see who the top delegates are in ENS. It
-      also shows who delegates to them.
-    </p>
-  </div>
-  <!-- HashOnChain -->
-  <div>
-    <a
-      href="https://hashonchain.com"
-      target="_blank"
-      class="text-green-600 hover:underline"
-    >
-      HashOnChain
-    </a>
-    <p class="mt-1 text-sm">
-      Store sha256 hashes onchain, and reveal them to the public later. Useful
-      to prove that you knew something before you mentioned it publicly.
-    </p>
-  </div>
+  {% endfor %}
 </div>

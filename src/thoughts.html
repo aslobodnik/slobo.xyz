@@ -5,28 +5,13 @@ description: All my writing and thoughts
 image: /img/book.webp
 ---
 
-<div class="flex items-center space-x-4">
-  <img
-    src="/img/book.webp"
-    alt="Content"
-    class="w-16 h-16 rounded-tl-2xl rounded-br-2xl"
-  />
+{% include "hero.html", title: "Stuff I Write", image: "/img/book.webp" %}
 
-  <div>
-    <h1 class="text-2xl">Stuff I Write</h1>
-  </div>
-</div>
-
-<div class="flex flex-col gap-8 pb-10 mt-10">
+<div class="content-list">
   <div class="space-y-6">
-    <div
-      class="p-6 rounded-lg border border-gray-200 transition-colors duration-200 hover:border-green-300"
-    >
+    <div class="thought-card">
       <h2 class="mb-2 text-lg font-semibold">
-        <a
-          href="/n-equals-one"
-          class="text-green-700 transition-colors duration-200 hover:text-green-600"
-        >
+        <a href="/n-equals-one" class="thought-link">
           N=1 is Significant
         </a>
       </h2>
@@ -36,15 +21,9 @@ image: /img/book.webp
         studies.
       </p>
     </div>
-    <!-- Reth -->
-    <div
-      class="p-6 rounded-lg border border-gray-200 transition-colors duration-200 hover:border-green-300"
-    >
+    <div class="thought-card">
       <h2 class="mb-2 text-lg font-semibold">
-        <a
-          href="/reth-archival-node-lighthouse-build-guide"
-          class="text-green-700 transition-colors duration-200 hover:text-green-600"
-        >
+        <a href="/reth-archival-node-lighthouse-build-guide" class="thought-link">
           Reth Archival Node Lighthouse Build Guide
         </a>
       </h2>
@@ -53,14 +32,9 @@ image: /img/book.webp
         Lighthouse integration.
       </p>
     </div>
-    <div
-      class="p-6 rounded-lg border border-gray-200 transition-colors duration-200 hover:border-green-300"
-    >
+    <div class="thought-card">
       <h2 class="mb-2 text-lg font-semibold">
-        <a
-          href="/money"
-          class="text-green-700 transition-colors duration-200 hover:text-green-600"
-        >
+        <a href="/money" class="thought-link">
           Money and Investing
         </a>
       </h2>
@@ -68,15 +42,9 @@ image: /img/book.webp
         Links to useful articles on money and investing.
       </p>
     </div>
-    <!-- Poker -->
-    <div
-      class="p-6 rounded-lg border border-gray-200 transition-colors duration-200 hover:border-green-300"
-    >
+    <div class="thought-card">
       <h2 class="mb-2 text-lg font-semibold">
-        <a
-          href="/poker"
-          class="text-green-700 transition-colors duration-200 hover:text-green-600"
-        >
+        <a href="/poker" class="thought-link">
           Poker Hand Rankings
         </a>
       </h2>

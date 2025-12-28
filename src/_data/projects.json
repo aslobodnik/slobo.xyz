@@ -1,0 +1,37 @@
+[
+  {
+    "title": "NameStone",
+    "url": "https://namestone.com",
+    "description": "Issue ENS subdomains through an easy to use REST API."
+  },
+  {
+    "title": "Durin",
+    "url": "https://durin.dev",
+    "description": "Durin is an opinionated approach to issuing ENS subnames on L2. Project docs, contracts, and architecture can be found on <a href=\"https://github.com/resolverworks/durin\">GitHub</a>."
+  },
+  {
+    "title": "ENSPro",
+    "url": "https://enspro.xyz",
+    "description": "A free and easy-to-use no-code portal for managing ENS subdomains."
+  },
+  {
+    "title": "ENS Wallets",
+    "url": "https://enswallets.xyz",
+    "description": "Current Balances of ENS DAO Wallets and their safe signers."
+  },
+  {
+    "title": "SafeNotes",
+    "url": "https://safenotes.xyz/",
+    "description": "Add notes to Safe transactions to clarify purpose, context, and origin—improving transparency and coordination."
+  },
+  {
+    "title": "Voting Power",
+    "url": "https://votingpower.xyz",
+    "description": "Voting Power makes it easy to see who the top delegates are in ENS. It also shows who delegates to them."
+  },
+  {
+    "title": "HashOnChain",
+    "url": "https://hashonchain.com",
+    "description": "Store sha256 hashes onchain, and reveal them to the public later. Useful to prove that you knew something before you mentioned it publicly."
+  }
+]
