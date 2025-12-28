@@ -33,5 +33,10 @@
     "title": "HashOnChain",
     "url": "https://hashonchain.com",
     "description": "Store sha256 hashes onchain, and reveal them to the public later. Useful to prove that you knew something before you mentioned it publicly."
+  },
+  {
+    "title": "Secret Signer",
+    "url": "https://secretsigner.com",
+    "description": "Steganography tool that hides messages in plain text using zero-width characters."
   }
 ]
