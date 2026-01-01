@@ -4,7 +4,7 @@ Built the original site myself in 2023. Redesigned in January 2026 using Claude 
 
 **Time: ~25 minutes** from first prompt to deployed.
 
-![Before and After](img/redesign-comparison.png)
+![Before and After](src/img/redesign-comparison.png)
 
 ## What Changed
 
