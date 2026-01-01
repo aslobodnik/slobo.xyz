@@ -2,41 +2,75 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    line-height: 1.75;
+  }
+}
+
 @layer components {
+  /* Navigation */
+  .nav-link {
+    @apply text-warmgray/80 transition-colors duration-200 hover:text-accent;
+  }
+
+  /* Content links - subtle underline */
+  .content-link {
+    @apply text-accent transition-all duration-200 underline decoration-accent/30 underline-offset-2;
+  }
+  .content-link:hover {
+    @apply decoration-accent/70;
+  }
+
+  /* Section titles */
+  .section-title {
+    @apply text-xl font-semibold mt-12 mb-4 text-warmgray;
+  }
+
+  /* Content list container */
+  .content-list {
+    @apply flex flex-col gap-8 pb-10 mt-8;
+  }
+
+  /* Thought cards with lift effect */
+  .thought-card {
+    @apply p-6 rounded-lg border border-warm-border bg-white/50 transition-all duration-300;
+  }
+  .thought-card:hover {
+    @apply border-accent/30 shadow-md -translate-y-0.5;
+  }
+
+  .thought-link {
+    @apply text-accent font-semibold transition-colors duration-200 hover:text-accent-light;
+  }
+
+  /* Poker styles */
   .poker-card {
     @apply w-auto h-20 md:h-28 transition-transform duration-200 hover:scale-110;
   }
-  .content-link {
-    @apply text-green-600 hover:underline;
-  }
-  .section-title {
-    @apply text-xl font-bold mt-8 mb-3;
-  }
-  .content-list {
-    @apply flex flex-col gap-6 pb-10 mt-10;
-  }
-  .table-cell {
-    @apply flex items-center border border-gray-200 border-dotted;
-  }
-  .table-cell-header {
-    @apply flex justify-center items-center font-bold border border-gray-200 border-dotted;
-  }
-  .table-cell-content {
-    @apply flex justify-start items-center pl-4 h-10 text-sm border border-gray-200 border-dotted;
-  }
-  .table-cell-price {
-    @apply flex justify-center items-center border border-gray-200 border-dotted;
-  }
   .hand-title {
-    @apply mb-4 text-xl font-semibold text-green-700;
+    @apply mb-4 text-xl font-semibold text-accent;
   }
   .card-container {
     @apply flex items-center space-x-2 md:space-x-4;
   }
-  .thought-card {
-    @apply p-6 rounded-lg border border-gray-200 transition-colors duration-200 hover:border-green-300;
+
+  /* Table cells */
+  .table-cell {
+    @apply flex items-center border border-warm-border border-dotted;
   }
-  .thought-link {
-    @apply text-green-700 transition-colors duration-200 hover:text-green-600;
+  .table-cell-header {
+    @apply flex justify-center items-center font-semibold border border-warm-border border-dotted;
+  }
+  .table-cell-content {
+    @apply flex justify-start items-center pl-4 h-10 text-sm border border-warm-border border-dotted;
+  }
+  .table-cell-price {
+    @apply flex justify-center items-center border border-warm-border border-dotted;
+  }
+
+  /* Code blocks - monospace */
+  code, pre {
+    @apply font-mono text-sm;
   }
 }
