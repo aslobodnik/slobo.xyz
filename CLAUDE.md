@@ -23,81 +23,40 @@ src/
 │   ├── default.html   # master layout
 │   └── hero.html      # reusable hero partial
 ├── _data/             # JSON data files
-│   ├── books.json
-│   ├── quotes.json
-│   ├── products.json
-│   ├── resources.json
-│   └── projects.json
 ├── img/               # images (webp preferred)
 ├── styles.css         # tailwind + component classes
 └── *.html             # pages
 _site/                 # build output (gitignored)
 ```
 
-## Adding Content
+## Design System (Jan 2026)
 
-### New Page
+### Typography
+- **Body:** Source Serif 4 (Google Fonts)
+- **Code:** JetBrains Mono
+- Fonts loaded in `default.html`
 
-```html
----
-layout: default
-title: Page Title
-description: For OpenGraph/SEO
-image: /img/optional-og-image.webp
----
+### Colors (defined in `tailwind.config.js`)
+- `cream` (#FDFBF7) - background
+- `warmgray` (#2D2D2D) - text
+- `accent` (#2E7D32) - green links/highlights
+- `warm-border` (#E8E4DF) - borders
 
-{% include "hero.html", title: "Page Title", image: "/img/icon.webp" %}
+### Key Classes (`styles.css`)
+- `.content-link` - green link with subtle underline
+- `.section-title` - h2 styling
+- `.content-list` - content container
+- `.thought-card` - blog post card with hover lift
+- `.nav-link` - navigation links
 
-<div class="content-list">
-  <!-- content here -->
-</div>
-```
-
-### New Blog Post
-
-1. Add page under `src/` (e.g., `src/my-post.html`)
-2. Link it from `thoughts.html`
-
-### Adding to Data-Driven Pages
-
-Edit the JSON file in `src/_data/`:
-- `books.json` - book recommendations
-- `quotes.json` - quote collection
-- `products.json` - product recommendations
-- `resources.json` - investing resources
-- `projects.json` - homepage projects
-
-## CSS Component Classes
-
-Defined in `src/styles.css`:
-
-| Class | Use |
-|-------|-----|
-| `.content-link` | Green link with hover underline |
-| `.section-title` | H2 styling (mt-8, mb-3, text-xl, bold) |
-| `.content-list` | Standard content container |
-| `.poker-card` | Poker card images |
-| `.hand-title` | Poker hand name styling |
-| `.card-container` | Poker card row |
-| `.thought-card` | Blog post card |
-| `.thought-link` | Blog post title link |
-| `.table-cell-*` | Table styling (header, content, price) |
+### Animations
+- `animate-fade-in` - page load fade
+- Hover effects on cards, links, "slobo" wordmark
 
 ## Conventions
 
 - **Layout**: all pages use `layout: default`
-- **Hero**: use `{% include "hero.html", title: "...", image: "..." %}`
-- **Container**: `max-w-2xl` centered content
-- **Colors**: green accent (`text-green-600`, `hover:text-green-700`)
-- **Links**: use `.content-link` class
-- **Sections**: use `.section-title` for h2 headings
-- **Content**: wrap in `.content-list`
-- **Font**: monospace throughout (`font-mono`)
-- **Images**: webp format, stored in `src/img/`
-- **HTML in data**: use `| safe` filter to render HTML from JSON
-
-## Notes
-
-- No JavaScript - all interactivity via CSS (hover states, transitions)
-- Responsive breakpoints on nav and hero images
-- Partials use Liquid templating syntax
+- **Hero**: `{% include "hero.html", title: "...", image: "..." %}`
+- **Container**: `max-w-2xl` centered
+- **Nav**: "slobo" left, links right
+- **No JavaScript** - CSS-only interactivity
