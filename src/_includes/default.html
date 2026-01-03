@@ -21,10 +21,10 @@
         <nav class="flex justify-between items-center py-6 border-b border-warm-border">
           <a href="/" class="text-xl font-semibold tracking-tight transition-all duration-300 hover:tracking-wide hover:text-accent">slobo</a>
           <ul class="flex gap-4 sm:gap-6 text-sm sm:text-base">
-            <li><a href="/" class="nav-link">Home</a></li>
-            <li><a href="/books" class="nav-link">Books</a></li>
-            <li><a href="/quotes" class="nav-link">Quotes</a></li>
-            <li><a href="/thoughts" class="nav-link">Thoughts</a></li>
+            <li><a href="/" class="nav-link {% if page.url == '/' %}nav-link-active{% endif %}">Home</a></li>
+            <li><a href="/books" class="nav-link {% if page.url == '/books/' %}nav-link-active{% endif %}">Books</a></li>
+            <li><a href="/quotes" class="nav-link {% if page.url == '/quotes/' %}nav-link-active{% endif %}">Quotes</a></li>
+            <li><a href="/thoughts" class="nav-link {% if page.url == '/thoughts/' %}nav-link-active{% endif %}">Thoughts</a></li>
           </ul>
         </nav>
       </header>

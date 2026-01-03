@@ -13,6 +13,9 @@
   .nav-link {
     @apply text-warmgray/80 transition-colors duration-200 hover:text-accent;
   }
+  .nav-link-active {
+    @apply text-accent;
+  }
 
   /* Content links - subtle underline */
   .content-link {
@@ -30,6 +33,25 @@
   /* Content list container */
   .content-list {
     @apply flex flex-col gap-8 pb-10 mt-8;
+  }
+
+  /* Prose content - tighter spacing for flowing text */
+  .prose-content {
+    @apply flex flex-col gap-4 pb-10 mt-8;
+  }
+
+  /* Profile image - face-focused crop */
+  .profile-img {
+    @apply w-14 h-14 sm:w-16 sm:h-16 rounded-tl-2xl rounded-br-2xl object-cover;
+    object-position: center 15%;
+  }
+
+  /* Social icon touch target */
+  .social-link {
+    @apply flex items-center justify-center w-10 h-10 -m-2 transition duration-300 hover:opacity-50;
+  }
+  .social-link img {
+    @apply w-4 h-4;
   }
 
   /* Thought cards with lift effect */
@@ -72,5 +94,19 @@
   /* Code blocks - monospace */
   code, pre {
     @apply font-mono text-sm;
+  }
+
+  /* Quote card - editorial style */
+  .quote-card {
+    @apply py-6 border-l-2 border-accent/40 pl-6;
+  }
+  .quote-card:hover {
+    @apply border-accent;
+  }
+  .quote-text {
+    @apply text-warmgray text-base sm:text-lg leading-relaxed;
+  }
+  .quote-author {
+    @apply mt-3 text-sm text-warmgray/80 tracking-wide;
   }
 }

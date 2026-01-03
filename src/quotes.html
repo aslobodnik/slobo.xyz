@@ -7,13 +7,11 @@ image: /img/book.webp
 
 {% include "hero.html", title: "Quotes", image: "/img/quote.webp" %}
 
-<div class="content-list">
-  <div>
-    {% for quote in quotes %}
-    <blockquote class="p-4 italic text-neutral-600 quote">
-      <p class="mb-2 text-sm">{{ quote.text }}</p>
-      <cite class="text-sm">— {{ quote.author }}</cite>
-    </blockquote>
-    {% endfor %}
-  </div>
+<div class="flex flex-col gap-2 mt-8 pb-10">
+  {% for quote in quotes %}
+  <blockquote class="quote-card">
+    <p class="quote-text">"{{ quote.text }}"</p>
+    <cite class="quote-author block not-italic">— {{ quote.author }}</cite>
+  </blockquote>
+  {% endfor %}
 </div>
