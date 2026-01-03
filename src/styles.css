@@ -27,7 +27,7 @@
 
   /* Section titles */
   .section-title {
-    @apply text-xl font-semibold mt-12 mb-4 text-warmgray;
+    @apply text-xl font-semibold mt-8 mb-4 text-warmgray;
   }
 
   /* Content list container */
