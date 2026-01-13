@@ -1,4 +1,8 @@
-# 11ty with Tailwind
+# justslobo.com
+
+Personal website built with 11ty and Tailwind CSS.
+
+## Setup
 
 # 11ty
 
