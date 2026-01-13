@@ -6,25 +6,97 @@
     <title>{{ title }}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/styles.css" />
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
     <meta property="og:title" content="{{ title }}" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="{{ image }}" />
-    <meta property="og:url" content="https://slobo.xyz/" />
+    <meta property="og:url" content="https://justslobo.com/" />
     <meta property="og:description" content="{{ description }}" />
   </head>
-  <body class="flex flex-col min-h-screen font-serif bg-cream text-warmgray antialiased">
+  <body
+    class="flex flex-col min-h-screen font-serif bg-cream text-warmgray antialiased"
+  >
     <div class="container flex-grow px-4 sm:px-6 mx-auto max-w-2xl">
       <header>
-        <nav class="flex justify-between items-center py-6 border-b border-warm-border">
-          <a href="/" class="text-xl font-semibold tracking-tight transition-all duration-300 hover:tracking-wide hover:text-accent">slobo</a>
+        <nav
+          class="flex justify-between items-center pt-4 pb-1 border-b border-warm-border"
+        >
+          <a href="/" class="justslobo-wordmark" aria-label="justslobo - home">
+            <svg viewBox="0 0 900 220" class="h-10 sm:h-12">
+              <defs>
+                <filter id="ink" x="-10%" y="-10%" width="120%" height="120%">
+                  <feTurbulence
+                    type="fractalNoise"
+                    baseFrequency="0.9"
+                    numOctaves="1"
+                    seed="7"
+                    result="noise"
+                  />
+                  <feColorMatrix
+                    in="noise"
+                    type="matrix"
+                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.12 0"
+                    result="alphaNoise"
+                  />
+                  <feComposite
+                    in="alphaNoise"
+                    in2="SourceGraphic"
+                    operator="in"
+                    result="inkNoise"
+                  />
+                  <feBlend in="SourceGraphic" in2="inkNoise" mode="multiply" />
+                </filter>
+              </defs>
+              <text
+                x="0"
+                y="52%"
+                text-anchor="start"
+                dominant-baseline="middle"
+                fill="currentColor"
+                font-size="120"
+                letter-spacing="1.5"
+                font-family="Iowan Old Style, Palatino, Garamond, Georgia, serif"
+                font-weight="500"
+                filter="url(#ink)"
+              >
+                justslobo
+              </text>
+            </svg>
+          </a>
           <ul class="flex gap-4 sm:gap-6 text-sm sm:text-base">
-            <li><a href="/" class="nav-link {% if page.url == '/' %}nav-link-active{% endif %}">Home</a></li>
-            <li><a href="/books" class="nav-link {% if page.url == '/books/' %}nav-link-active{% endif %}">Books</a></li>
-            <li><a href="/quotes" class="nav-link {% if page.url == '/quotes/' %}nav-link-active{% endif %}">Quotes</a></li>
-            <li><a href="/thoughts" class="nav-link {% if page.url == '/thoughts/' %}nav-link-active{% endif %}">Thoughts</a></li>
+            <li>
+              <a
+                href="/"
+                class="nav-link {% if page.url == '/' %}nav-link-active{% endif %}"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="/books"
+                class="nav-link {% if page.url == '/books/' %}nav-link-active{% endif %}"
+                >Books</a
+              >
+            </li>
+            <li>
+              <a
+                href="/quotes"
+                class="nav-link {% if page.url == '/quotes/' %}nav-link-active{% endif %}"
+                >Quotes</a
+              >
+            </li>
+            <li>
+              <a
+                href="/thoughts"
+                class="nav-link {% if page.url == '/thoughts/' %}nav-link-active{% endif %}"
+                >Thoughts</a
+              >
+            </li>
           </ul>
         </nav>
       </header>

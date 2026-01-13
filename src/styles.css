@@ -9,6 +9,16 @@
 }
 
 @layer components {
+  /* Wordmark */
+  .justslobo-wordmark {
+    display: block;
+    color: #2D2D2D;
+    transition: color 700ms ease-out;
+  }
+  .justslobo-wordmark:hover {
+    color: #2E7D32;
+  }
+
   /* Navigation */
   .nav-link {
     @apply text-warmgray/80 transition-colors duration-200 hover:text-accent;
@@ -43,7 +53,7 @@
   /* Profile image - face-focused crop */
   .profile-img {
     @apply w-14 h-14 sm:w-16 sm:h-16 rounded-tl-2xl rounded-br-2xl object-cover;
-    object-position: center 15%;
+    object-position: center 35%;
   }
 
   /* Social icon touch target */
