@@ -38,5 +38,10 @@
     "title": "Secret Signer",
     "url": "https://secretsigner.com",
     "description": "Steganography tool that hides messages in plain text using zero-width characters."
+  },
+  {
+    "title": "stash.md",
+    "url": "https://stash.md",
+    "description": "A curated directory of skills for Claude Code. Every skill includes a live demo so you can try before you install."
   }
 ]
